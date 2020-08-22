@@ -1,2 +1,2 @@
-# zoj
-my awkward tries on programming
+# My ZOJ AC list
+Also my awkward tries on programming.
