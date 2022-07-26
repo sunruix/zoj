@@ -1,10 +1,10 @@
 #include <stdio.h>
+
 #define min(a, b) ((a) < (b) ? (a) : (b))
 
-int main()
-{
+int main() {
 	int n, m, i, j, a[100002], ans;
-
+    freopen("input", "r", stdin);
 	scanf("%d", &n);
 	for (a[0] = a[1] = 0, i = 2; i <= n + 1; i++)
 		scanf("%d", &a[i]), a[i] += a[i - 1];

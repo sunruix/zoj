@@ -1,29 +1,30 @@
 #include <stdio.h>
 
-int main()
-{
-	int n, m, k, a[1001], i, j, l, pre, cap, ans;
-
-	scanf("%d %d %d", &m, &n, &k);
-	while (k--) {
-		for (cap = m, ans = 1, pre = i = 0; i < n; i++) {
-			scanf("%d", &a[i]);
-			if (i && a[i] < a[i - 1])
-				cap++;
-			else
-				cap = cap - (a[i] - pre) + 1;
-			if (cap <= 0 || cap > m)
-				ans = 0;
-			if (pre < a[i])
-				pre = a[i];
-		}
-		for (i = 0; i < n && ans; i++) {
-			for (j = i + 1; j < n && a[j] > a[i]; j++);
-			for (l = j + 1; l < n && !(a[l] > a[j] && a[l] < a[i]); l++);
-			if (l < n)
-				ans = 0;
-		}
-		printf("%s\n", ans ? "YES" : "NO");
-	}
-	return 0;
+int main() {
+    int m, n, i, j, k, t, x, stack[1024], top, yes, max;
+    freopen("input", "r", stdin);
+    scanf("%d %d %d", &m, &n, &t);
+    while (t--) {
+        yes = 1;
+        stack[top = 0] = max = 0;
+        for (i = 0; i < n; ++i) {
+            scanf("%d", &x);
+            if (!yes)
+                continue;
+            if (x == stack[top])
+                --top;
+            else if (x < stack[top])
+                yes = 0;
+            else {
+                for (j = max + 1; j < x; ++j)
+                    stack[++top] = j;
+                if (top >= m)
+                    yes = 0;
+            }
+            if (max < x)
+                max = x;
+        }
+        printf("%s\n", yes ? "YES" : "NO");
+    }
+    return 0;
 }
