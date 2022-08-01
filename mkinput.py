@@ -1,3 +1,4 @@
+#!/home/sunrui/anaconda3/bin/python
 import random
 
 class graph:
@@ -59,4 +60,21 @@ def randstr(n, char_set = 'abcdefghijklmnopqrstuvsxyz'):
         s += random.sample(char_set, k = 1)[0]
     return s
 
-print(random.randint
+'''
+n = 50
+print(n)
+for i in range(n):
+    p = random.randint(1, 10)
+    l = random.randint(1, 100)
+    d = random.randint(1, 50) + l
+    print(p, l, d)
+    '''
+n = 100000
+print(n)
+cmds = ['Push', 'Pop', 'PeekMedian']
+for i in range(n):
+    ci = random.randint(0, 2)
+    if ci == 0:
+        print(cmds[ci], random.randint(1, 100000))
+    else:
+        print(cmds[ci])
