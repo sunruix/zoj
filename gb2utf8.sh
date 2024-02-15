@@ -19,9 +19,10 @@ function conv {
 # Take one argument as filename's suffix
 function conv_by_suffix {
     for file in $(ls | grep "$1$"); do
-	newfile="$(file%.$1).utf8.$1"
-	conv $file $newfile
+        newfile="$(file%.$1).utf8.$1"
+        conv $file $newfile
     done
+}
 
 # Take one argument as filename's suffix
 function conv_recrusive {

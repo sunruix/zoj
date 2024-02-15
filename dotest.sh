@@ -1,4 +1,4 @@
-#/bin/bash
+#!/bin/bash
 
 exec_file="a.out"
 case_file="input"
