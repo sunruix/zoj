@@ -1,16 +1,17 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <string.h>
+
+#define PUD 2
+#define BIT(x) (1 << (x))
 
 void func(int);
 
 int main()
 {
-    //freopen("input", "w", stdout);
-    unsigned char c = 0;
-    char cc = 0xf0;
-    c = cc;
-    printf("%c\n", c);
+    unsigned short a;
+    printf("%d\n", sizeof(unsigned));
     return 0;
 }
 

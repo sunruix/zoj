@@ -69,6 +69,7 @@ for i in range(n):
     d = random.randint(1, 50) + l
     print(p, l, d)
     '''
+'''
 n = 100000
 print(n)
 cmds = ['Push', 'Pop', 'PeekMedian']
@@ -78,3 +79,22 @@ for i in range(n):
         print(cmds[ci], random.randint(1, 100000))
     else:
         print(cmds[ci])
+'''
+n = 1000
+m = n
+l = []
+ll = []
+print(n, m)
+for i in range(m - 1):
+    a = i
+    b = i + 1
+    if a != b and (a, b) not in l:
+        l.append((a, b))
+l.append((999, 0))
+for e in l:
+    print(e[0], e[1], 100, 500)
+k = n
+print(k)
+for i in range(0, k):
+    print(i, end=' ')
+print()
