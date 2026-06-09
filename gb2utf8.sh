@@ -6,7 +6,7 @@ IFS=$'\n'
 function conv {
     file="$1"
     newfile="$1"
-    if [ $# > 1 ]; then
+    if [ $# -gt 1 ]; then
         newfile="$2"
     fi
 
